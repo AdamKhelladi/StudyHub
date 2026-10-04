@@ -4,4 +4,7 @@ app = FastAPI()
 
 @app.get("/")
 def root(): 
-  return {"message": "Hello from StudyHub project"}
+  return get_message()
+
+def get_message(): 
+  return {"message": "Test endpoint."}
