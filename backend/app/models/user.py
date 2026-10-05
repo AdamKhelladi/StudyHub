@@ -20,6 +20,6 @@ class User(Base):
 
   courses = relationship(
     "Course",
-    back_populates="owner",
+    back_populates="owner", # back_populates → tells SQLAlchemy that both relationships are two sides of the same relationship
     cascade="all, delete-orphan" # means deleting a User deletes all their Courses too — matches what you confirmed earlier.
   )
