@@ -4,7 +4,7 @@ app = FastAPI()
 
 @app.get("/")
 def root():
-  return {"message": "Test endpoint"}
+  return {"message": "Test get endpoint"}
 
 @app.post("/")
 def test_post():
