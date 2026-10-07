@@ -4,12 +4,12 @@ from sqlalchemy.sql import func
 from app.database import Base
 
 # FlashcardDeck
-#       │
-#       └── flashcards
-#               │
-#               ├── Flashcard
-#               ├── Flashcard
-#               └── Flashcard
+#      │
+#      └── flashcards
+#              │
+#              ├── Flashcard
+#              ├── Flashcard
+#              └── Flashcard
 
 class FlashcardDeck(Base): 
   __tablename__ = "flashcard_decks"
