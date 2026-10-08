@@ -19,7 +19,7 @@ class FlashcardDeck(Base):
   created_at = Column(DateTime(timezone=True), server_default=func.now())
 
   course_id = Column(Integer, ForeignKey("courses.id"), nullable=False)
-  source_document_id = Column(Integer, ForeignKey("documents.id"), ondelete="SET NULL", nullable=True)
+  source_document_id = Column(Integer, ForeignKey("documents.id", ondelete="SET NULL"), nullable=True)
 
   course = relationship("Course", back_populates="flashcard_decks")
   source_document = relationship("Document", back_populates="flashcard_decks")
