@@ -9,7 +9,7 @@ class UserCreate(BaseModel): # Validates registration data
 
 class UserLogin(BaseModel): # Validates login credentials
   email: EmailStr
-  password: str 
+  password: str = Field(min_length=8, max_length=72)
 
 class UserOut(BaseModel): # Defines the public user data returned by the API
   id: int
