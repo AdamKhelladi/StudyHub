@@ -3,6 +3,15 @@ from sqlalchemy.orm import declarative_base, sessionmaker
 
 from sqlalchemy.engine import Engine 
 
+def get_db(): 
+  db = SessionLocal()
+
+  try: 
+    yield db
+
+  finally: 
+    db.close()
+
 DATABASE_URL = "sqlite:///./app.db"
 
 engine = create_engine(
