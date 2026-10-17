@@ -2,6 +2,7 @@ from sqlalchemy import create_engine, event
 from sqlalchemy.orm import declarative_base, sessionmaker
 
 from sqlalchemy.engine import Engine 
+from app.config import DATABASE_URL
 
 def get_db(): 
   db = SessionLocal()
@@ -11,8 +12,6 @@ def get_db():
 
   finally: 
     db.close()
-
-DATABASE_URL = "sqlite:///./app.db"
 
 engine = create_engine(
   DATABASE_URL, 
